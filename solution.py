@@ -405,7 +405,7 @@ ax.set_ylabel('Intra-cluster (inertia)');
 # In[20]:
 
 
-kmeans = KMeans(n_clusters=5).fit(datos_scaled)
+kmeans = KMeans(n_clusters=5, random_state=3425).fit(datos_scaled)
 centroids = kmeans.cluster_centers_
 print(centroids)
 
@@ -472,10 +472,8 @@ plt.show()
 # 
 # Como vemos, los tamaños de los clusters son uniformes y todos los clusters tienen un comportamiento asociado en cuanto a los niveles de agua, oxígeno y la velocidad del motor. Con este resultado podríamos describir a nuestros clusters como:
 # 
-# - **cluster0 (azul)**:  Motor que alcanza velocidad máxima, con valores aislados pr encima de la media, con niveles de agua y oxígeno por debajo de la media. 
+# - **cluster0 (azul)**: Motor que alcanza velocidad máxima, con valores aislados por encima de la media, con niveles de agua y oxígeno por debajo de la media. 
 # - **cluster1 (naranja)**: Motor apagado y en algunos casos con velocidad por debajo de la media, con niveles de oxígeno y agua por debajo de la media.
-# - **cluster2 (verde)**: Motor apagado o con velocidad que llega a alcanzar la media, con niveles de oxígeno y agua superiores a la media.
-# - **cluster3 (rojo)**:Motor apagado o con velocidad que llega a sobrepasar la media sin alcanzar niveles máximos, con niveles de oxígeno superiores a la media y niveles de agua inferiores a la media.
-# - **cluster4 (morado)**: Motor apagado y en un solo caso con velocidad por debajo de la media, con niveles de oxígeno por debajo de la media y niveles de agua superiores a la media.
-
-# 
+# - **cluster2 (verde)**:Motor apagado y en un solo caso con velocidad por debajo de la media, con niveles de oxígeno por debajo de la media y niveles de agua superiores a la media. 
+# - **cluster3 (rojo)**: Motor apagado o con velocidad que llega a sobrepasar la media sin alcanzar niveles máximos, con niveles de oxígeno superiores a la media y niveles de agua inferiores a la media.
+# - **cluster4 (morado)**: Motor apagado o con velocidad que llega a alcanzar la media, con niveles de oxígeno y agua superiores a la media.
